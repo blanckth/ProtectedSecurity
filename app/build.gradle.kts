@@ -1,7 +1,4 @@
 plugins {
-    //alias(libs.plugins.android.application)
-    //alias(libs.plugins.kotlin.android)
-    //alias(libs.plugins.kotlin.compose)
     id("com.android.application")
     kotlin("android")
     kotlin("kapt")
@@ -9,7 +6,7 @@ plugins {
 
 android {
     namespace = "com.android.prosecagent"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.android.prosecagent"
@@ -38,7 +35,6 @@ android {
         jvmTarget = "17"
     }
     buildFeatures {
-        compose = true
         viewBinding = true
     }
 }
