@@ -12,10 +12,15 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.android.prosecagent.ui.theme.ProtectedSecurityAgentTheme
+import androidx.appcompat.app.AppCompatActivity
+import com.android.prosecagent.databinding.ActivityMainBinding
 
-class MainActivity : ComponentActivity() {
+class MainActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         enableEdgeToEdge()
         setContent {
             ProtectedSecurityAgentTheme {
@@ -27,6 +32,7 @@ class MainActivity : ComponentActivity() {
                 }
             }
         }
+        // TODO: This is the starting point for ProtectedSecurityAgent core modules
     }
 }
 
