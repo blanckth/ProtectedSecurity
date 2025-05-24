@@ -3,6 +3,115 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.android.prosecagent">
 
+
+    <!--
+        Permissions for Non-Rooted Devices
+        These permissions are essential for collecting device metadata and are accessible without root.
+    -->
+
+    <!-- Access to network state for determining connectivity status -->
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <!-- Access to Wi-Fi state for retrieving Wi-Fi information -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <!-- Access to coarse location, required for Wi-Fi SSID and BSSID retrieval -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <!-- Access to fine location, required for precise location data -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <!-- Access to phone state for retrieving device ID, network information, etc. -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <!-- Access to installed applications and packages -->
+    <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES"
+        tools:ignore="QueryAllPackagesPermission" />
+
+    <!-- Access to battery statistics -->
+    <uses-permission android:name="android.permission.BATTERY_STATS"
+        tools:ignore="ProtectedPermissions" />
+
+    <!-- Access to usage statistics; requires user to grant permission in settings -->
+    <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS"
+        tools:ignore="ProtectedPermissions" />
+
+    <!-- Access to camera for capturing images or video -->
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <!-- Access to microphone for audio recording -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
+    <!-- Access to external storage for reading files -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <!-- Access to external storage for writing files -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <!--
+        Permissions for Rooted Devices
+        These permissions are typically restricted to system or privileged applications.
+        They may require root access and appropriate signing with platform keys.
+    -->
+
+    <!-- Permission to access and manage users on the device -->
+    <uses-permission android:name="android.permission.MANAGE_USERS"
+        tools:ignore="ProtectedPermissions" />
+
+    <!-- Permission to access and manage device policies -->
+    <uses-permission android:name="android.permission.MANAGE_DEVICE_ADMINS"
+        tools:ignore="ProtectedPermissions" />
+
+    <!-- Permission to access and modify secure settings -->
+    <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS"
+        tools:ignore="ProtectedPermissions" />
+
+    <!-- Permission to access and modify system settings -->
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+
+    <!-- Permission to access and manage notifications -->
+    <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" />
+
+    <!-- Permission to access and manage accessibility services -->
+    <uses-permission android:name="android.permission.BIND_ACCESSIBILITY_SERVICE"
+        tools:ignore="ProtectedPermissions" />
+
+    <!-- Permission to access and manage VPN services -->
+    <uses-permission android:name="android.permission.BIND_VPN_SERVICE"
+        tools:ignore="ProtectedPermissions" />
+
+    <!-- Permission to access and manage device storage -->
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+
+    <!-- Permission to access and manage device hardware and sensors -->
+    <uses-permission android:name="android.permission.DEVICE_POWER"
+        tools:ignore="ProtectedPermissions" />
+
+    <!-- Permission to access and manage device boot process -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <!-- Permission to access and manage device location hardware -->
+    <uses-permission android:name="android.permission.LOCATION_HARDWARE"
+        tools:ignore="ProtectedPermissions" />
+
+    <!-- Permission to access and manage device's fingerprint hardware -->
+    <uses-permission android:name="android.permission.USE_FINGERPRINT" />
+
+    <!-- Permission to access and manage device's biometric hardware -->
+    <uses-permission android:name="android.permission.USE_BIOMETRIC" />
+
+    <!-- Permission to access and manage device's keyguard -->
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+
+    <!-- Permission to access and manage device's lock screen -->
+    <uses-permission android:name="android.permission.SET_KEYGUARD_SECURE" />
+
+    <!-- Permission to access and manage device's screen lock -->
+    <uses-permission android:name="android.permission.SET_KEYGUARD_PASSWORD" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -13,6 +122,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.DarkActionBar"
         tools:targetApi="34">
+        <!-- Activities, services, receivers, and providers go here -->
         <activity
             android:name=".MainActivity"
             android:exported="true">
