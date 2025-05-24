@@ -3,6 +3,7 @@ package com.android.prosecagent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.android.prosecagent.databinding.ActivityMainBinding
+import com.android.prosecagent.ui.screens.DeviceInfoFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -14,5 +15,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         // TODO: This is the starting point for ProtectedSecurityAgent core modules
+        supportFragmentManager.beginTransaction()
+            .replace(android.R.id.content, DeviceInfoFragment())
+            .commit()
+
     }
 }

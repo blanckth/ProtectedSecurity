@@ -4,7 +4,7 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.android.prosecagent.data.entity.DeviceMetadataEntity
+import com.android.prosecagent.data.entity.DeviceMetadata
 
 /**
  * DAO interface for accessing device metadata table.
@@ -14,8 +14,8 @@ import com.android.prosecagent.data.entity.DeviceMetadataEntity
 interface DeviceMetadataDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertMetadata(metadata: DeviceMetadataEntity)
+    suspend fun insertMetadata(metadata: DeviceMetadata)
 
     @Query("SELECT * FROM device_metadata LIMIT 1")
-    suspend fun getMetadata(): DeviceMetadataEntity?
+    suspend fun getMetadata(): DeviceMetadata?
 }

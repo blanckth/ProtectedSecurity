@@ -1,18 +1,18 @@
-package com.android.prosecagent.data.db
+package com.android.prosecagent.data
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.android.prosecagent.data.dao.DeviceMetadataDao
-import com.android.prosecagent.data.entity.DeviceMetadataEntity
+import com.android.prosecagent.data.entity.DeviceMetadata
 
 /**
  * Main Room database class for ProtectedSecurityAgent.
  * Contains metadata table and can be extended with more entities.
  */
 @Database(
-    entities = [DeviceMetadataEntity::class],
+    entities = [DeviceMetadata::class],
     version = 1,
     exportSchema = false
 )
