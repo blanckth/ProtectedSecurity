@@ -33,6 +33,7 @@ echo "📦 Installing ProtectedSecurityAgent to connected device..."
 if [[ "$1" == "local" ]]; then
     # pm install -r "$AGENT_APK"
     for perm in "${PERMISSIONS[@]}"; do
+        echo "Granting : $perm"
         pm grant "$PACKAGE_NAME" "$perm"
     done
     echo "✅ Installed and granted all permissions on local (rooted) device."
